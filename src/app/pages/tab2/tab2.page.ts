@@ -20,17 +20,22 @@ export class Tab2Page implements OnInit {
     this.cargarNoticias(this.segment.value);
   }
  cambioCategoria(event) {
-   console.log(event.detail.value);
-   this.noticias=[];
+  // console.log(event.detail.value);
+   this.noticias = [];
    this.cargarNoticias(event.detail.value);
  }
- cargarNoticias(categoria: string) {
+ cargarNoticias(categoria: string , event?) {
 
   this.noticiasServices.getTopHeadLinesCategoria(categoria)
   .subscribe(resp => {
-    console.log(resp);
-    this.noticias.push( ...resp.articles);
+   // console.log(resp);
+    this.noticias.push( ...resp.articles );
+    if (event) {
+      event.target.complete();
+    }
   });
  }
-
+ loadData(event) {
+   this.cargarNoticias(this.segment.value, event);
+ }
 }
