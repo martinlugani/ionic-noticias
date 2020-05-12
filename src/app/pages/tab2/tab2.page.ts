@@ -9,7 +9,7 @@ import { Article } from '../../interfaces/interfaces';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page implements OnInit {
-  @ViewChild(IonSegment) segment: IonSegment;
+  @ViewChild(IonSegment, {static: true}) segment: IonSegment;
   categorias = ['business', 'entertainment', 'general' , 'health', 'science', 'sports' , 'technology'];
   noticias: Article[] = [];
   constructor( private noticiasServices: NoticiasService) {
