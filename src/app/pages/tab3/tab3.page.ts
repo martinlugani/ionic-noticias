@@ -1,3 +1,4 @@
+import { DataLocalService } from './../../sevrices/data-local.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+
+  slidesOpt = {
+    allowSlidePrev: false,
+    allowSlideNext: false,
+  };
+  constructor(public dataLocalService: DataLocalService) {
+
+
+  }
 
 }

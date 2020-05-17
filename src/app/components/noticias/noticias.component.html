@@ -3,7 +3,8 @@
     <ion-col size="12" size-lg="3" size-md="4" size-sm="12"
     *ngFor="let noticia of noticias;let i = index ">
       <app-noticia [noticia]="noticia"
-      [indice]="i"></app-noticia>
+                    [enNoticias]="enNoticias"
+                    [indice]="i"></app-noticia>
     </ion-col>
   </ion-row>
 </ion-grid>
